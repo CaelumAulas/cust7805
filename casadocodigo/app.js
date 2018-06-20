@@ -9,6 +9,10 @@ function rotas(server) {
     res.render('index')
   })
 
+  server.get('/coiso', (req, res) => {
+    res.send('Coisado')
+  })
+
   server.get('/contato', (req, res) => {
     res.render('contato')
   })
