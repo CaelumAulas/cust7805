@@ -1,3 +1,5 @@
+const mysql = require('mysql')
+
 function rotas(server) {
   server.use((req, res, next) => {
     console.log(req.url)
@@ -18,7 +20,16 @@ function rotas(server) {
   })
 
   server.get('/produtos', (req, res) => {
-    res.render('produtos/lista')
+    const connection = mysql.createConnection({
+      user: 'root',
+      password: '',
+      database: 'lojanode',
+      host: 'localhost' 
+    })
+
+    connection.query('SELECT * FROM livros', (error, livros, fields) => {
+      res.render('produtos/lista', {livros})
+    })
   })
 
   server.use((req, res) => {

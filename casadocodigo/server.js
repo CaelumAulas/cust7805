@@ -3,6 +3,7 @@ const port = 3001
 const server = express()
 
 server.set('view engine', 'ejs')
+server.use(express.static('./public'))
 
 require('./app.js').rotas(server)
 require('./app.js').coiso()
