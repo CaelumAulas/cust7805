@@ -1,28 +1,32 @@
-const express = require('express')
-const port = 3001
+function rotas(server) {
+  server.use((req, res, next) => {
+    console.log(req.url)
+    next()
+  })
 
-const server = express()
+  // JSON -> JavaScript Object Notation
+  server.get('/', (req, res) => {
+    res.render('index')
+  })
 
-server.set('view engine', 'ejs')
+  server.get('/contato', (req, res) => {
+    res.render('contato')
+  })
 
-server.use((req, res, next) => {
-  console.log(req.url)
-  next()
-})
-// JSON -> JavaScript Object Notation
-server.get('/', (req, res) => {
-  res.render('index')
-})
+  server.get('/produtos', (req, res) => {
+    res.render('produtos/lista')
+  })
 
-server.get('/contato', (req, res) => {
-  res.render('contato')
-})
+  server.use((req, res) => {
+    res.send('Essa página não existe!')
+  })
+}
 
-server.use((req, res) => {
-  res.send('Essa página não existe!')
-})
+function coiso() {
+  console.log('oi')
+}
 
-server.listen(port, () => {
-  console.log(`Servidor de pé em http://localhost:${port}`)
-  console.log('Pra derrubar o servidor: ctrl + c')
-})
+module.exports = {
+  rotas,
+  coiso
+}
