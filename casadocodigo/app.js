@@ -1,4 +1,5 @@
-const mysql = require('mysql')
+const connectionFactory = require('./infra/connectFactory')
+const LivrosDao = require('./dao/LivrosDao')
 
 function rotas(server) {
   server.use((req, res, next) => {
@@ -20,16 +21,14 @@ function rotas(server) {
   })
 
   server.get('/produtos', (req, res) => {
-    const connection = mysql.createConnection({
-      user: 'root',
-      password: '',
-      database: 'lojanode',
-      host: 'localhost' 
-    })
+    const connection = connectionFactory()
+    const livrosDao = new LivrosDao(connection)
 
-    connection.query('SELECT * FROM livros', (error, livros, fields) => {
+    livrosDao.getAll((error, livros, fields) => {
       res.render('produtos/lista', {livros})
     })
+
+    connection.end()
   })
 
   server.use((req, res) => {
@@ -37,11 +36,4 @@ function rotas(server) {
   })
 }
 
-function coiso() {
-  console.log('oi')
-}
-
-module.exports = {
-  rotas,
-  coiso
-}
+module.exports = rotas

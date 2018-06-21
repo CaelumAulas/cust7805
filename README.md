@@ -2,6 +2,9 @@ https://github.com/CaelumAulas/cust7805
 
 https://github.com/MarcoBrunoBR/arquivos-js35
 
+Casa do código 10% - MARCOBRUNO_CAELUM
+Novatec 20% - pinceladasdaweb
+
 Links:
 - https://httpstatusdogs.com/
 - https://docs.emmet.io/cheat-sheet/

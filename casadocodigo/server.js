@@ -5,8 +5,7 @@ const server = express()
 server.set('view engine', 'ejs')
 server.use(express.static('./public'))
 
-require('./app.js').rotas(server)
-require('./app.js').coiso()
+require('./app.js')(server)
 
 // const objeto = require('./app.js')
 // objeto.rotas(server)
