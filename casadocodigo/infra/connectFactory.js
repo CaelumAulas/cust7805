@@ -8,7 +8,10 @@ function connectionFactory() {
     host: 'localhost' 
   })
 
-  return connection
+ return connection
 }
 
-module.exports = connectionFactory
+module.exports = () => connectionFactory
+// module.exports = function() {
+//  return connectionFactory
+// }
