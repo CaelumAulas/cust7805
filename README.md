@@ -12,3 +12,7 @@ Links:
 - https://expressjs.com/ (site, tudo)
 - http://restify.com/ (api )
 - https://github.com/airbnb/javascript
+
+Commands:
+- npm init --yes
+- npm i nodemon -D
