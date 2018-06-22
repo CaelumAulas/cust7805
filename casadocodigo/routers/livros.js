@@ -17,8 +17,8 @@ function livros(server) {
     const connection = server.infra.connectFactory()
     const livrosDao = new LivrosDao(connection)
 
-    livrosDao.save(livro, () => {
-      res.redirect('/produtos')      
+    livrosDao.save(livro, (error, result) => {
+      res.redirect('/produtos')
     })
 
     connection.end()
