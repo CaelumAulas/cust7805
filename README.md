@@ -12,6 +12,7 @@ Links:
 - https://expressjs.com/ (site, tudo)
 - http://restify.com/ (api )
 - https://github.com/airbnb/javascript
+- https://medium.com/@paul_irish/debugging-node-js-nightlies-with-chrome-devtools-7c4a1b95ae27
 
 Commands:
 - npm init --yes
