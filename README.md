@@ -13,6 +13,11 @@ Links:
 - http://restify.com/ (api )
 - https://github.com/airbnb/javascript
 - https://medium.com/@paul_irish/debugging-node-js-nightlies-with-chrome-devtools-7c4a1b95ae27
+- https://willianjusten.com.br/falando-sobre-rscss/
+- https://willianjusten.com.br/organizando-seu-css-com-itcss/
+- https://developers.google.com/web/tools/puppeteer/
+- http://casperjs.org/
+- https://www.cypress.io/
 
 Commands:
 - npm init --yes

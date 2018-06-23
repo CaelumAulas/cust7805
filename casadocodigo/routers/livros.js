@@ -1,34 +1,10 @@
-const LivrosDao = require('../dao/LivrosDao')
+const LivrosController = require('../controller/LivrosController')
 
 function livros(server) {
-  server.get('/produtos', (req, res) => {
-    const connection = server.infra.connectFactory()
-    const livrosDao = new LivrosDao(connection)
-
-    livrosDao.getAll((error, livros, fields) => {
-      res.render('produtos/lista', {livros})
-    })
-
-    connection.end()
-  })
-
-  server.post('/produtos', (req, res) => {
-    const livro = req.body
-    const connection = server.infra.connectFactory()
-    const livrosDao = new LivrosDao(connection)
-
-    livrosDao.save(livro, (error, result) => {
-      res.redirect('/produtos')
-    })
-
-    connection.end()
-  })
-
-  server.get('/produtos/form', (req, res) => {
-    res.render('produtos/form')
-  })
-
-  
+  server.get( '/produtos', LivrosController.getAll)
+  server.post('/produtos', LivrosController.save)
+  server.get('/produtos/form', LivrosController.show)
+  // server.get('/produtos/form', (req, res) => res.render('produtos/form'))
 }
 
 module.exports = livros
