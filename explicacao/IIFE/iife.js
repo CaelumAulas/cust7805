@@ -1,0 +1,5 @@
+const nome = 'Marco'
+
+;(function() {
+
+})()
